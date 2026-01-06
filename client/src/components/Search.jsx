@@ -10,8 +10,7 @@ const Search = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const [chatExists, setChatExists] = useState(false);
-    const [chatId, setChatId] = useState(null);
+
     const navigate = useNavigate();
 
     const fetchUserData = async () => {
@@ -20,7 +19,7 @@ const Search = () => {
                 withCredentials: true,
             });
             setcurrentUser(response.data.user._id);
-           
+
         } catch (error) {
             console.error('Error fetching user data:', error);
         }
@@ -106,7 +105,7 @@ const Search = () => {
                                 className="w-full pl-12 pr-4 py-4 bg-zinc-800/50 border border-zinc-600/50 rounded-xl text-white placeholder-zinc-400 focus:ring-2 focus:ring-green/50 focus:border-green transition-all duration-200 outline-none text-lg"
                             />
                         </div>
-                        
+
                         <button
                             type="submit"
                             disabled={!query.trim() || loading}
@@ -164,8 +163,8 @@ const Search = () => {
 
                         <div className="grid gap-4">
                             {users.map((user, index) => (
-                                <div 
-                                    key={user._id} 
+                                <div
+                                    key={user._id}
                                     className="bg-gradient-to-r from-zinc-800/50 to-zinc-700/50 border border-zinc-600/50 rounded-xl p-6 hover:border-green/30 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg hover:shadow-green/10 animate-in slide-in-from-bottom-4"
                                     style={{ animationDelay: `${index * 100}ms` }}
                                 >
@@ -202,7 +201,7 @@ const Search = () => {
                                                 className="w-full sm:w-auto group px-6 py-3 bg-gradient-to-r from-green to-emerald-600 hover:from-emerald-600 hover:to-green text-white rounded-xl font-semibold transition-all duration-200 shadow-lg hover:shadow-green/25 flex items-center justify-center space-x-2 transform hover:scale-105 active:scale-95"
                                             >
                                                 <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-                                                <span>{chatExists ? "Go to Chat" : "Start Chat"}</span>
+                                                <span>Start Chat</span>
                                             </button>
                                         </div>
                                     </div>
@@ -240,13 +239,13 @@ const Search = () => {
                                 <SearchIcon className="w-4 h-4 text-white" />
                             </div>
                         </div>
-                        
+
                         <div className="space-y-4 max-w-md mx-auto">
                             <h3 className="text-2xl font-bold text-white">Discover New Connections</h3>
                             <p className="text-zinc-400 leading-relaxed">
                                 Enter a name or email address in the search box above to find people and start meaningful conversations.
                             </p>
-                            
+
                             <div className="flex flex-wrap gap-2 justify-center pt-4">
                                 <span className="px-3 py-1 bg-zinc-700/50 text-zinc-300 rounded-full text-sm">Search by name</span>
                                 <span className="px-3 py-1 bg-zinc-700/50 text-zinc-300 rounded-full text-sm">Find by email</span>

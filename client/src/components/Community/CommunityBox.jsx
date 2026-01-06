@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { Users, Hash, ArrowRight, Calendar, Crown, Loader2 } from 'lucide-react';
+import { Users, Hash, ArrowRight } from 'lucide-react';
 
 const CommunityBox = ({ community }) => {
   const [userId, setUserId] = useState('');
@@ -48,7 +48,7 @@ const CommunityBox = ({ community }) => {
   return (
     <div className="group">
       <div className="relative bg-gradient-to-br from-zinc-800/50 to-zinc-700/50 border border-zinc-600/50 hover:border-green/50 rounded-2xl p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green/10 cursor-pointer overflow-hidden">
-        
+
         {/* Header */}
         <div className="relative z-10 mb-4">
           <div className="flex items-start justify-between mb-3">

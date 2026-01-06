@@ -16,7 +16,7 @@ const Chat = () => {
   const [currentChat, setCurrentChat] = useState(null);
   const [loading, setLoading] = useState(true);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+
 
   // Connect socket once
   useEffect(() => {
@@ -85,7 +85,7 @@ const Chat = () => {
 
   // Filter chats based on search term
   const filteredChats = chats.filter(chat => {
-    return true; 
+    return true;
   });
 
   const toggleSidebar = () => {
@@ -156,7 +156,7 @@ const Chat = () => {
                       setCurrentChat(null);
                     } else {
                       setCurrentChat(chat);
-                      closeSidebar(); 
+                      closeSidebar();
                     }
                   }}
                 >
