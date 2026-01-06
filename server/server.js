@@ -52,6 +52,13 @@ app.get('*', (_, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-});
+
+// Export app for Vercel
+module.exports = app;
+
+// Only listen if run directly
+if (require.main === module) {
+    server.listen(PORT, () => {
+        console.log(`🚀 Server running on port ${PORT}`);
+    });
+}
