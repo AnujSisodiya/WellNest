@@ -5,7 +5,7 @@ import ChatBox from "./ChatBox";
 import { HiOutlineChatBubbleBottomCenterText } from "react-icons/hi2";
 import ClipLoader from "react-spinners/ClipLoader";
 import { socket } from "../../socket"; // import the shared socket
-import { MessageCircle, Users, Search, Settings, Menu, X } from "lucide-react";
+import { MessageCircle, Menu } from "lucide-react";
 
 const Chat = () => {
   const [user, setUser] = useState(null);
